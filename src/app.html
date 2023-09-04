@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<script data-theme-script="true">
+			const key = "deathblows-tech:color-scheme";
+			const colorScheme = localStorage[key];
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+			if (colorScheme === "dark" || (colorScheme !== "light" && prefersDark)) {
+				document.documentElement.setAttribute("data-color-scheme", "dark");
+			} else {
+				document.documentElement.setAttribute("data-color-scheme", "light");
+			}
+		</script>
+
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
