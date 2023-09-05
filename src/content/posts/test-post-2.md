@@ -1,6 +1,7 @@
 ---
 title: Test Post 2
 tags: [test, post, more-tags]
+date: 'Monday, September 4th 2023'
 ---
 
 # Hello world

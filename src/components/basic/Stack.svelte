@@ -13,10 +13,8 @@
 
 	export let forwardRef: $$Props["forwardRef"] = undefined;
 	export let as: $$Props["as"] = "div";
-	export let cssProps: $$Props["cssProps"] = {};
-
 	export let direction: $$Props["direction"];
-
+	export let cssProps: $$Props["cssProps"] = {};
 	export { cssProps as css };
 
 	const extracted = css.raw(cssProps!);

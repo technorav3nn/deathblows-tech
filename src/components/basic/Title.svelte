@@ -14,10 +14,9 @@
 
 	export let forwardRef: $$Props["forwardRef"] = undefined;
 	export let component: $$Props["component"] = "h1";
-	export let cssProps: $$Props["css"] = {};
 	export let size: $$Props["size"] = "4xl";
 	export let weight: $$Props["weight"] = "bold";
-
+	export let cssProps: $$Props["css"] = {};
 	export { cssProps as css };
 
 	const extracted = css.raw(cssProps!);

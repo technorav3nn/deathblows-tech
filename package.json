@@ -23,12 +23,9 @@
 		"@tabler/icons-svelte": "2.30.0",
 		"@unpic/svelte": "^0.0.30",
 		"bezier-easing": "^2.1.0",
-		"bits-ui": "^0.0.33",
-		"shiki": "^0.14.3",
-		"svelte-tabler": "^0.6.2"
+		"shiki": "^0.14.3"
 	},
 	"devDependencies": {
-		"@iconify-json/mdi": "^1.1.54",
 		"@melt-ui/pp": "^0.1.2",
 		"@pandacss/dev": "^0.13.1",
 		"@park-ui/presets": "^0.10.0",

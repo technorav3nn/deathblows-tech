@@ -17,17 +17,17 @@
 	} & HTMLAttributes<HTMLDivElement>;
 
 	export let element: $$Props["element"] = null;
-	export let cssProps: $$Props["css"] = {};
 	export let as: $$Props["as"] = "div";
+	export let cssProps: $$Props["css"] = {};
 
 	export { cssProps as css };
 
-	const cssPropsCast = cssProps!;
+	const extracted = css.raw(cssProps!);
 </script>
 
 <svelte:element
 	this={as}
-	class={css({ ...css.raw(cssPropsCast) })}
+	class={css(extracted)}
 	{...$$restProps}
 	bind:this={element}
 	use:forwardEvents

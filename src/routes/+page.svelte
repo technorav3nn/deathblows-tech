@@ -17,6 +17,21 @@
 	const DEFAULT_SIZE = 20;
 </script>
 
+<svelte:head>
+	<title>deathblows.tech - personal website</title>
+	<meta name="description" content="My personal website made with Sveltekit!" />
+	<meta
+		name="keywords"
+		content="svelte, sveltekit, deathblows, deathblows.tech, death, deathblows.tech, sveltejs"
+	/>
+	<meta name="author" content="deathblows" />
+	<meta name="og:title" content="deathblows.tech - personal website" />
+	<meta name="og:description" content="My personal website made with Sveltekit!" />
+	<meta name="og:type" content="website" />
+	<meta name="og:url" content="https://deathblows.tech" />
+	<meta name="og:image" content={profilePic} />
+</svelte:head>
+
 <div
 	class={wrap({
 		gap: "6",
@@ -80,6 +95,7 @@
 		href="https://github.com/technorav3nn"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="github"
 	>
 		<IconBrandGithub size={DEFAULT_SIZE} />
 	</IconButton>
@@ -88,6 +104,7 @@
 		href="https://discord.com/users/304043360963002370"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="discord"
 	>
 		<IconBrandDiscord size={DEFAULT_SIZE} />
 	</IconButton>
@@ -96,6 +113,7 @@
 		href="https://google.com"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="twitter"
 	>
 		<IconBrandTwitter size={DEFAULT_SIZE} />
 	</IconButton>

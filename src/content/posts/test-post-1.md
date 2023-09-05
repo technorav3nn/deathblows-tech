@@ -1,7 +1,8 @@
 ---
 title: 'Welcome to my blog!'
 description: 'I love to write about Svelte and all the cool things that you can build with it.'
-date: '2021-04-21'
+date: 'Monday, September 4th 2023'
+tags: ['test', 'post', 'more-tags', 'unique-tag']
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque orci nec facilisis iaculis. Sed accumsan placerat dolor. Donec sollicitudin nisi sit amet sodales molestie. Maecenas sit amet dolor nulla. Fusce sed elit et erat consequat dignissim. Nunc eu erat felis. Mauris pretium, arcu eu dapibus tempor, mauris eros tempor tortor, eu tincidunt erat libero sit amet mi. Phasellus eu libero mollis, finibus lacus eget, sollicitudin nulla.
 

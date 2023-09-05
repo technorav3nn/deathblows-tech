@@ -10,7 +10,7 @@
 </script>
 
 <Drawer title="Menu">
-	<IconButton variant="tertiary" slot="trigger" css={{ p: 0 }}>
+	<IconButton variant="tertiary" slot="trigger" css={{ p: 0 }} aria-label="Open navigation menu">
 		<IconMenu />
 	</IconButton>
 

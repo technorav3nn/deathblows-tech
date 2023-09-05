@@ -12,7 +12,6 @@
 
 	type $$Props = {
 		css?: SystemStyleObject;
-		class?: string;
 		href?: string;
 		target?: string;
 		rel?: string;
@@ -22,24 +21,24 @@
 
 	const forwardEvents = forwardEventsBuilder(get_current_component());
 
-	let className: $$Props["class"] = undefined;
-
 	export let variant: $$Props["variant"] = "primary";
-	export let cssProp: SystemStyleObject = {};
+	export let cssProps: SystemStyleObject = {};
 	export let size: $$Props["size"] = "md";
 	export let href: $$Props["href"] = undefined;
 	export let target: $$Props["target"] = "";
-	export { className as class };
-	export { cssProp as css };
+
+	export { cssProps as css };
+
+	const extracted = css.raw(cssProps!);
 </script>
 
 <svelte:element
 	this={href ? "a" : "button"}
-	use:forwardEvents
+	class={cx(button({ variant, size }), css({ borderRadius: "md" }, extracted))}
 	{href}
 	{...{ target: href ? target : undefined }}
-	class={cx(button({ variant, size }), css({ ...cssProp, borderRadius: "md" }), className)}
 	{...$$restProps}
+	use:forwardEvents
 >
 	<slot />
 </svelte:element>

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { Button } from "bits-ui";
-
 	import * as classes from "./Navbar.styles";
 
 	import Tooltip from "$components/ui/tooltip/Tooltip.svelte";
@@ -12,9 +10,9 @@
 <Tooltip>
 	<div slot="content">{tooltipLabel}</div>
 	<div slot="trigger">
-		<Button.Root {href} class={classes.item}>
+		<svelte:element this={href ? "a" : "button"} {href} class={classes.item}>
 			<slot />
-		</Button.Root>
+		</svelte:element>
 	</div>
 </Tooltip>
 

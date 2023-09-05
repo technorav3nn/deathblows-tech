@@ -10,21 +10,27 @@
 	import { css, cx } from "$styled-system/css";
 	import { button } from "$styled-system/recipes";
 
-	type $$Props = ComponentProps<Button>;
+	type $$Props = ComponentProps<Button> & { "aria-label": string };
 
 	const forwardEvents = forwardEventsBuilder(get_current_component());
 
 	export let href: $$Props["href"] = "";
 	export let variant: $$Props["variant"] = "primary";
 	export let target: $$Props["target"] = "";
+	export let cssProps: $$Props["css"] = {};
+
 	let className: $$Props["class"] = "";
+
 	export { className as class };
+	export { cssProps as css };
+
+	const extracted = css.raw(cssProps!);
 </script>
 
 <svelte:element
 	this={href ? "a" : "button"}
 	use:forwardEvents
-	class={cx(button({ variant }), css({ px: 0, borderRadius: "md" }), className)}
+	class={cx(button({ variant }), css({ px: 0, borderRadius: "md", ...extracted }), className)}
 	{href}
 	{...{ target: href ? target : undefined }}
 	{...$$restProps}

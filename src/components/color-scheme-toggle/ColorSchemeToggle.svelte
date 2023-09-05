@@ -18,7 +18,12 @@
 	}
 </script>
 
-<IconButton variant="tertiary" on:click={toggleColorScheme}>
+<IconButton
+	variant="tertiary"
+	css={{ ml: -2 }}
+	aria-label="Toggle color scheme"
+	on:click={toggleColorScheme}
+>
 	<IconSun class={toggleIcon({ icon: "sun" })} {size} />
 	<IconMoon
 		class={toggleIcon({

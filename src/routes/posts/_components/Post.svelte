@@ -51,7 +51,7 @@
 		<section>
 			<p class={css({ fontSize: "md", fontWeight: "semibold" })}>{post.meta.title}</p>
 			{#if post.meta.tags}
-				<div class={css({ mt: 1, display: "flex", gap: 1 })}>
+				<div class={css({ mt: 1, display: "flex", gap: 1, flexWrap: "wrap" })}>
 					{#each post.meta.tags as tag}
 						<span class={badge({ variant: "subtle", size: "sm" })}>
 							#{tag}
