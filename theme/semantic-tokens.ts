@@ -4,7 +4,7 @@ export const semanticTokens = defineSemanticTokens({
 	colors: {
 		accent: {
 			default: { value: { base: "{colors.sky.600}", _dark: "{colors.sky.300}" } },
-			emphasized: { value: { base: "{colors.sky.600}", _dark: "{colors.sky.400}" } },
+			emphasized: { value: { base: "{colors.sky.700}", _dark: "{colors.sky.400}" } },
 			fg: { value: { base: "{colors.white}", _dark: "{colors.gray-palette.950}" } },
 		},
 		border: {

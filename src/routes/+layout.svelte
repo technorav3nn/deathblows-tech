@@ -1,13 +1,18 @@
 <script lang="ts">
 	import "@fontsource-variable/inter";
 	import "@fontsource-variable/plus-jakarta-sans";
+	import { onMount } from "svelte";
 
 	import "../app.pcss";
 
 	import RootShell from "../components/shell/AppShell.svelte";
 
+	import { QueryClient, QueryClientProvider } from "@tanstack/svelte-query";
+
 	import { browser } from "$app/environment";
 	import { colorSchemeStore } from "$lib/stores/color-scheme";
+
+	const queryClient = new QueryClient();
 
 	if (browser) {
 		const css = document.createElement("style");
@@ -34,6 +39,11 @@
 			);
 			document.head.appendChild(css);
 		}
+
+		onMount(() => {
+			disableAnimation();
+			enableAnimation();
+		});
 	}
 
 	export let data;
@@ -43,6 +53,8 @@
 	/** eslint-disable svelte/no-inner-declarations */
 </script>
 
-<RootShell {pathname}>
-	<slot />
-</RootShell>
+<QueryClientProvider client={queryClient}>
+	<RootShell {pathname}>
+		<slot />
+	</RootShell>
+</QueryClientProvider>

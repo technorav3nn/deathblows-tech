@@ -21,9 +21,11 @@
 		"@smui/common": "7.0.0-beta.14",
 		"@sveltejs/adapter-vercel": "^3.0.3",
 		"@tabler/icons-svelte": "2.30.0",
+		"@tanstack/svelte-query": "^4.33.0",
 		"@unpic/svelte": "^0.0.30",
 		"bezier-easing": "^2.1.0",
-		"shiki": "^0.14.3"
+		"shiki": "^0.14.3",
+		"sswr": "^2.0.0"
 	},
 	"devDependencies": {
 		"@melt-ui/pp": "^0.1.2",

@@ -12,6 +12,7 @@
 	import { css } from "$styled-system/css";
 	import { wrap } from "$styled-system/patterns";
 	import type { ButtonVariant } from "$styled-system/recipes";
+	import NowPlaying from "./_components/NowPlaying/NowPlaying.svelte";
 
 	const DEFAULT_VARIANT: ButtonVariant["variant"] = "secondary";
 	const DEFAULT_SIZE = 20;
@@ -118,3 +119,5 @@
 		<IconBrandTwitter size={DEFAULT_SIZE} />
 	</IconButton>
 </Stack>
+
+<NowPlaying />

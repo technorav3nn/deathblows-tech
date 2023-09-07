@@ -21,7 +21,6 @@
 		openDelay: 20,
 		closeDelay: 20,
 		closeOnPointerDown: false,
-		portal: "body",
 		forceVisible: true,
 	});
 </script>

@@ -41,12 +41,12 @@
 				borderRadius: "full",
 				objectFit: "cover",
 				objectPosition: "left",
-				width: 8,
-				height: 8,
+				width: 50,
+				height: 50,
 			})}
+			width={50}
+			height={50}
 			priority
-			width={8}
-			height={8}
 		/>
 	</Stack>
 	<!-- Header on Desktop or Tablet -->

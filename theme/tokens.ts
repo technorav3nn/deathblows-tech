@@ -25,4 +25,7 @@ export const tokens = defineTokens({
 			value: "var(--font-plus-jakarta), sans-serif",
 		},
 	},
+	animations: {
+		bounce: { value: "" },
+	},
 });

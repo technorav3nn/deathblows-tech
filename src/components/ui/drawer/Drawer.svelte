@@ -12,21 +12,25 @@
 	import { stack } from "$styled-system/patterns";
 	import { button } from "$styled-system/recipes";
 
+	const open = writable(false);
+
 	type $$Slots = {
 		trigger: {};
 		content: {
 			close: () => void;
 		};
+		default: {
+			close: () => void;
+			open: () => void;
+			state: typeof open;
+		};
 	};
-
-	const open = writable(false);
 
 	export let title: string;
 
 	const {
 		elements: { trigger, overlay, content, title: titleElement, close, portalled },
 	} = createDialog({
-		portal: "body",
 		closeOnOutsideClick: true,
 		closeOnEscape: true,
 		forceVisible: true,
@@ -40,9 +44,11 @@
 	}
 </script>
 
-<button {...$trigger} use:$trigger.action>
+<slot close={closeDrawer} open={() => open.set(true)} state={open} />
+
+<div {...$trigger} use:$trigger.action>
 	<slot name="trigger" />
-</button>
+</div>
 
 <div {...$portalled} use:$portalled.action>
 	{#if $open}

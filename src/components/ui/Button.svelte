@@ -34,7 +34,19 @@
 
 <svelte:element
 	this={href ? "a" : "button"}
-	class={cx(button({ variant, size }), css({ borderRadius: "md" }, extracted))}
+	class={cx(
+		button({ variant, size }),
+		css(
+			{
+				borderRadius: "md",
+				bg: {
+					base: "accent.default",
+					_hover: "accent.emphasized",
+				},
+			},
+			extracted
+		)
+	)}
 	{href}
 	{...{ target: href ? target : undefined }}
 	{...$$restProps}
