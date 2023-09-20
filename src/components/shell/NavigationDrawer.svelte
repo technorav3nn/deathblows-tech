@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { IconMenu } from "@tabler/icons-svelte";
+	import { IconMenu2 } from "@tabler/icons-svelte";
 
 	import Stack from "$components/basic/Stack.svelte";
 	import Button from "$components/ui/Button.svelte";
@@ -11,7 +11,7 @@
 
 <Drawer title="Menu">
 	<IconButton variant="tertiary" slot="trigger" css={{ p: 0 }} aria-label="Open navigation menu">
-		<IconMenu />
+		<IconMenu2 />
 	</IconButton>
 
 	<div slot="content" let:close>

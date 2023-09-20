@@ -1,18 +1,24 @@
 <script lang="ts">
 	import "@fontsource-variable/inter";
 	import "@fontsource-variable/plus-jakarta-sans";
+
+	import { QueryClient, QueryClientProvider } from "@tanstack/svelte-query";
 	import { onMount } from "svelte";
 
 	import "../app.pcss";
 
 	import RootShell from "../components/shell/AppShell.svelte";
 
-	import { QueryClient, QueryClientProvider } from "@tanstack/svelte-query";
-
 	import { browser } from "$app/environment";
-	import { colorSchemeStore } from "$lib/stores/color-scheme";
+	import { LOCAL_STORAGE_KEY, colorSchemeStore } from "$lib/stores/color-scheme";
 
-	const queryClient = new QueryClient();
+	const queryClient = new QueryClient({
+		defaultOptions: {
+			queries: {
+				enabled: browser,
+			},
+		},
+	});
 
 	if (browser) {
 		const css = document.createElement("style");
@@ -52,6 +58,20 @@
 
 	/** eslint-disable svelte/no-inner-declarations */
 </script>
+
+<svelte:head>
+	<script data-theme-script="true" data-local-storage-key={LOCAL_STORAGE_KEY}>
+		const key = document.currentScript.dataset.localStorageKey;
+		const colorScheme = localStorage[key];
+		const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+		if (colorScheme === "dark" || (colorScheme !== "light" && prefersDark)) {
+			document.documentElement.setAttribute("data-color-scheme", "dark");
+		} else {
+			document.documentElement.setAttribute("data-color-scheme", "light");
+		}
+	</script>
+</svelte:head>
 
 <QueryClientProvider client={queryClient}>
 	<RootShell {pathname}>

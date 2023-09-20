@@ -7,27 +7,37 @@
 	import { get_current_component } from "svelte/internal";
 
 	import { css } from "$styled-system/css";
+	import { isCssProperty } from "$styled-system/jsx/is-valid-prop.mjs";
+	import type { SystemProperties } from "$styled-system/types/style-props";
+	import type { MinimalNested } from "$styled-system/types/system-types";
 
 	const forwardEvents = forwardEventsBuilder(get_current_component());
 
 	type $$Props = {
 		element?: HTMLDivElement | null;
 		as?: string;
-		css?: SystemStyleObject;
-	} & HTMLAttributes<HTMLDivElement>;
+	} & HTMLAttributes<HTMLDivElement> &
+		Partial<SystemProperties & MinimalNested<SystemStyleObject>>;
 
 	export let element: $$Props["element"] = null;
 	export let as: $$Props["as"] = "div";
-	export let cssProps: $$Props["css"] = {};
 
-	export { cssProps as css };
+	const props = $$restProps as $$Props | { [key: string]: unknown } as $$Props;
 
-	const extracted = css.raw(cssProps!);
+	const extractedProps: Record<string, SystemStyleObject | number | string> = {};
+	for (const key in props) {
+		if (isCssProperty(key)) {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			extractedProps[key] = (props as any)[key];
+		}
+	}
+
+	const extractedCss = css.raw(extractedProps as SystemStyleObject);
 </script>
 
 <svelte:element
 	this={as}
-	class={css(extracted)}
+	class={css(extractedCss)}
 	{...$$restProps}
 	bind:this={element}
 	use:forwardEvents

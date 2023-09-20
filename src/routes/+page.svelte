@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { IconBrandDiscord, IconBrandGithub, IconBrandTwitter } from "@tabler/icons-svelte";
+
 	import { Image } from "@unpic/svelte";
+
+	import NowPlaying from "./_components/NowPlaying/NowPlaying.svelte";
 
 	import Stack from "$components/basic/Stack.svelte";
 	import Title from "$components/basic/Title.svelte";
@@ -8,11 +11,11 @@
 	import IconButton from "$components/ui/IconButton.svelte";
 
 	import profilePic from "$lib/assets/images/profile-pic.jpeg";
-
 	import { css } from "$styled-system/css";
 	import { wrap } from "$styled-system/patterns";
 	import type { ButtonVariant } from "$styled-system/recipes";
-	import NowPlaying from "./_components/NowPlaying/NowPlaying.svelte";
+	import Box from "$components/basic/Box.svelte";
+	import Test from "./test.svelte";
 
 	const DEFAULT_VARIANT: ButtonVariant["variant"] = "secondary";
 	const DEFAULT_SIZE = 20;

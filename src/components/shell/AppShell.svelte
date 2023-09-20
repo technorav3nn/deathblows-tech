@@ -2,15 +2,14 @@
 	import Footer from "./Footer.svelte";
 	import Header from "./Header.svelte";
 
-	import Box from "$components/basic/Box.svelte";
-
 	import { slideFade } from "$lib/util/transitions/slide-fade";
+	import { css } from "$styled-system/css";
 
 	export let pathname: string;
 </script>
 
-<Box
-	css={{
+<div
+	class={css({
 		minHeight: "100vh",
 		bg: "bg.default",
 		display: "flex",
@@ -19,7 +18,7 @@
 		mx: "auto",
 		px: 7,
 		// py: 12,
-	}}
+	})}
 >
 	<Header />
 	{#key pathname}
@@ -28,4 +27,4 @@
 		</div>
 	{/key}
 	<Footer />
-</Box>
+</div>

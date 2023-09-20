@@ -45,16 +45,16 @@
 		css={{ alignItems: "flex-start", justifyContent: "space-between", fontSize: "sm" }}
 	>
 		{#if $query.data?.status === "idle"}
-			<h1 class={css({ fontWeight: "bold" })}>Not Playing</h1>
+			<p class={css({ fontWeight: "bold", letterSpacing: "tight" })}>Not Listening To Anything</p>
 		{:else}
 			<Stack direction="column">
-				<h1 class={css({ fontWeight: "black", lineClamp: 1 })}>
+				<p class={css({ fontWeight: "black", lineClamp: 1 })}>
 					{#if !$query.isLoading && !$query.isError}
 						{$query.data?.song?.artist} - {$query.data?.song?.name}
 					{:else}
 						Loading...
 					{/if}
-				</h1>
+				</p>
 				<p class={css({ fontSize: "xs", color: "fg.muted" })}>
 					{#if !$query.isLoading && !$query.isError}
 						{$query.data?.song?.album}
@@ -64,8 +64,8 @@
 				</p>
 			</Stack>
 		{/if}
-		<a href="https://last.fm/user/Death_Blows" target="_blank" rel="noopener noreferrer"
-			><IconBrandLastfm size={20} /></a
-		>
+		<a href="https://last.fm/user/Death_Blows" target="_blank" rel="noopener noreferrer">
+			<IconBrandLastfm size={20} />
+		</a>
 	</Stack>
 </div>

@@ -34,20 +34,22 @@
 			alignItems: "center",
 		}}
 	>
-		<Image
-			src={profilePic}
-			alt="my profile pic, a serval laying down"
-			class={css({
-				borderRadius: "full",
-				objectFit: "cover",
-				objectPosition: "left",
-				width: 50,
-				height: 50,
-			})}
-			width={50}
-			height={50}
-			priority
-		/>
+		<a href="/">
+			<Image
+				src={profilePic}
+				alt="my profile pic, a serval laying down"
+				class={css({
+					borderRadius: "full",
+					objectFit: "cover",
+					objectPosition: "left",
+					width: "45px",
+					height: "45px",
+				})}
+				width={50}
+				height={50}
+				priority
+			/>
+		</a>
 	</Stack>
 	<!-- Header on Desktop or Tablet -->
 	<Stack
@@ -65,10 +67,11 @@
 				{href}
 				class={css({
 					color: currentPageIsPath(href) ? "fg.default" : "fg.subtle",
-					borderBottomColor: currentPageIsPath(href) ? "accent.default" : "transparent",
-					borderBottomWidth: 2,
+					// borderBottomColor: currentPageIsPath(href) ? "accent.default" : "transparent",
+					// borderBottomWidth: 2,
 					fontSize: "md",
-					fontFamily: "plus-jakarta-sans",
+					//fontFamily: "plus-jakarta-sans",
+					letterSpacing: "0.01em",
 					fontWeight: "semibold",
 					transition: "color 0.2s ease-in-out",
 					_hover: {
@@ -89,9 +92,10 @@
 				smDown: "flex",
 				mdTo2xl: "none",
 			},
+			gap: 1,
 		}}
 	>
-		<NavigationDrawer />
 		<ColorSchemeToggle />
+		<NavigationDrawer />
 	</Stack>
 </Stack>

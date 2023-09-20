@@ -1,5 +1,4 @@
-import type { RequestEvent } from "../../../routes/api/fm/$types";
-
+import type { RequestEvent } from "@sveltejs/kit";
 import type { LastFMResponseBody, TrackImage, State } from "./types";
 
 const buildEndpoint = (username: string, token: string) =>
@@ -39,14 +38,14 @@ function parseSong(body: LastFMResponseBody | null, imageSize: TrackImage["size"
 }
 
 export async function getNowPlaying(
-	event: RequestEvent,
+	fetch: RequestEvent["fetch"],
 	username: string,
 	token: string
 ): Promise<State> {
 	const endpoint = buildEndpoint(username, token);
 
 	try {
-		const result = await event.fetch(endpoint);
+		const result = await fetch(endpoint);
 		const track = (await result.json()) as LastFMResponseBody;
 
 		const status = parseSong(track, "extralarge");

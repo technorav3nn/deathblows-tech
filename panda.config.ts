@@ -18,6 +18,8 @@ export default defineConfig({
 			button: ["*"],
 		},
 	},
+	// for the isCssProperty function
+	jsxFramework: "react",
 	theme: {
 		extend: {
 			recipes: {},
