@@ -9,6 +9,7 @@
 
 	import type { State } from "$lib/util/fm/types";
 	import { css } from "$styled-system/css";
+	import { tooltip } from "$components/ui/tooltip/Tooltip.recipe";
 
 	const query = createQuery<State>({
 		queryKey: ["now-playing"],
@@ -64,7 +65,13 @@
 				</p>
 			</Stack>
 		{/if}
-		<a href="https://last.fm/user/Death_Blows" target="_blank" rel="noopener noreferrer">
+		<a
+			href="https://last.fm/user/Death_Blows"
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Link to my last.fm page"
+			title="Last.fm profile"
+		>
 			<IconBrandLastfm size={20} />
 		</a>
 	</Stack>

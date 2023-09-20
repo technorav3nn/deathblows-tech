@@ -46,9 +46,9 @@
 
 <slot close={closeDrawer} open={() => open.set(true)} state={open} />
 
-<div {...$trigger} use:$trigger.action>
+<button {...$trigger} use:$trigger.action>
 	<slot name="trigger" />
-</div>
+</button>
 
 <div {...$portalled} use:$portalled.action>
 	{#if $open}

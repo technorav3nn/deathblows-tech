@@ -14,7 +14,7 @@
 		<IconMenu2 />
 	</IconButton>
 
-	<div slot="content" let:close>
+	<svelte:fragment slot="content" let:close>
 		<Stack
 			direction="column"
 			css={{
@@ -45,5 +45,5 @@
 				</Button>
 			{/each}
 		</Stack>
-	</div>
+	</svelte:fragment>
 </Drawer>

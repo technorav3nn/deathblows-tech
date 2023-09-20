@@ -32,8 +32,12 @@
 		function enableAnimation() {
 			(() => window.getComputedStyle(document.body))();
 			setTimeout(() => {
-				document.head.removeChild(css);
-			}, 1);
+				try {
+					document.head.removeChild(css);
+				} catch {
+					console.log(`[+layout.svelte] failed to remove css, todo: have a better fix`);
+				}
+			}, 10);
 		}
 
 		// eslint-disable-next-line svelte/no-inner-declarations
